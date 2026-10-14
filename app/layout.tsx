@@ -1,4 +1,24 @@
+import '@/app/globals.css';
 import { Metadata } from "next";
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import {Space_Grotesk, Inter, Space_Mono} from 'next/font/google';
+
+const spacegrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--spacegrotesk'
+});
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500','600','700', '800', '900'],
+  variable: '--inter'
+});
+const spacemono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--spacemono'
+});
 
 //Following will need work
 export const metadata: Metadata = {
@@ -8,12 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}){
 return(
-  <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+  <html lang="en" className={`${spacegrotesk.variable} ${inter.variable} ${spacemono.variable}`}>
   <body>
+    <Header />
     {children}
+    <Footer />
   </body>
   </html>
 );
