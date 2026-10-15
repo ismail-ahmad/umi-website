@@ -18,13 +18,12 @@
   --indigo-d: #4338CA;
   --emerald: #34D399;
   --emerald-f: #059669;
+  --max-width: 1180px;
   
 
   /* Font sizes below */
-
-  --cta-font-size: 14.5px;
   --menulink-font-size: 14px;
-  --logo-text-font-size: 12px;
+  --logo-text-font-size: 18px;
   --logo-sm-text-font-size: 8.5px;
   --footerlink-font-size: 13.5px;
   /* clamping used for hero text */
@@ -42,6 +41,10 @@
   --text-font-family: var(--inter), system-ui, sans-serif;
   --mono: var(--spacemono, ui-monospace, monospace);
 
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --transition: .18s ease;
 
   /* heading fonts */
   --heading-font-family: var(--display);
@@ -54,12 +57,14 @@
   --logo-umi-color: var(--ink);
   --logo-consultant-color: var(--indigo);
   --logo-text-color: var(--muted2);
+  --logo-text-font-family: var(--mono);
+  --logo-font-family: var(--display);
 
   /* content colors below */
   --text-color: var(--muted);
   --heading-color: var(--ink);
 
-  /* cta color */
+  /* cta */
   --cta-backgroundcolor: var(--indigo-f);
   --cta-color:var(--white);
   --cta-backgroundcolor-hover: var(--indigo-d);
@@ -67,6 +72,15 @@
   --cta2-backgroundcolor: #059669;
   --cta2-backgroundcolor-hover: #047857;
   --cta2-color: var(--white);
+
+  --cta-font-family: var(--body);
+  --cta-font-weight: 500;
+  --cta-font-size: 14.5px;
+  --cta-padding: 12px 22px;
+  --cta-border: 1px solid transparent;
+  --cta-border-radious: var(--radius-sm);
+  --cta-transform: translateY(-1px);
+
 
   /* hero colors */
   --herobutton2-color: var(--soft);
@@ -97,7 +111,7 @@ h1, h2, h3, h4, h5, h6{
 }
 body{
   font-family: var(--text-font-family);
-  min-height: 100vh;
+  line-height: 1.65;
 }
 
 /* footer styles */
@@ -119,10 +133,100 @@ body{
   padding: 0;
   margin: 0;
 }
-/* 
---body: 'Inter', system-ui, sans-serif;
---mono: 'Space Mono', ui-monospace, monospace;
 
---radius-sm: 8px;
---radius: 14px;
---radius-lg: 20px; */
+/* Logo Styles Below */
+
+.logo-group{
+  font-size: var(--logo-text-font-size);
+  color: var(--logo-umi-color);
+  font-family: var(--logo-font-family);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  line-height: 1.1;
+  align-items: flex-start;
+}
+.logo-text{
+  font-size: var(--logo-sm-text-font-size);
+  color: var(--logo-text-color);
+  margin-top: 2px;
+  letter-spacing: 2px;
+  font-family: var(--logo-text-font-family);
+}
+.logo{font-weight: 500;}
+.logo-span{color: var(--logo-consultant-color);}
+
+
+/* Menu Styles Below */
+
+.menu{display: flex; align-items: center; justify-content: center;}
+.menu-list{
+  list-style-type: none;
+}
+.menu-link a{
+  text-decoration: none;
+  color: var(--menu-color);
+  font-size: var(--menulink-font-size);
+}
+.menu-link a:hover{
+  color: var(--menunonactivelink-color-hover);
+}
+.menu-link .active-menu-link{
+  color: var(--menuactivelink-color);
+}
+.menu-link .active-menu-link:hover{
+  color: var(--menuactivelink-color-hover);
+}
+
+
+.cta{
+  font-size: var(--cta-font-size);
+  background-color: var(--cta-backgroundcolor);
+  padding: var(--cta-padding);
+  border: var(--cta-border);
+  border-radius: var(--cta-border-radious);
+  transform: var(--cta-transform);
+  transition: var(--transition);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--cta-color);
+  font-weight: var(--cta-font-weight);
+  font-family: var(--cta-font-family);
+}
+.cta:hover{
+  box-shadow: var(--cta-boxshadow-hover);
+  background-color: var(--cta-backgroundcolor-hover);
+}
+
+/* Header styles below */
+.header-section{
+  border-bottom: 1px solid rgba(30,45,71,.7);
+  backdrop-filter: blur(14px);
+  background-color: rgba(9,13,23,.8);
+  position: sticky;
+  top: 0;
+}
+.header{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 67px;
+  margin: 0 auto;
+}
+.wrap{
+  max-width: var(--max-width);
+}
+.h-padding{
+  padding: 0 24px;
+}
+
+@media screen and (min-width: 900px) {
+  .menu-list{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 28px;
+  }
+}
