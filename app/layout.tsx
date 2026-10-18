@@ -31,7 +31,9 @@ return(
   <html lang="en" className={`${spacegrotesk.variable} ${inter.variable} ${spacemono.variable}`}>
   <body>
     <Header />
-    {children}
+    <main className='main'>
+      {children}
+    </main>
     <Footer />
   </body>
   </html>
