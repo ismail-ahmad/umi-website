@@ -36,8 +36,8 @@ export default function Header():ReactElement{
         <section className='header-section'>
             <div className=' header wrap h-padding'>
                 <Logo_Group />
-                <Menu menuOpen={toggle} />
-                <div onClick={()=> {useToggle(false)}} className={`menu-close-button ${toggle ? 'menu-close-button-visible' : ''}`}></div>
+                <Menu menuOpen={toggle} closeMenuAction={() => {useToggle(false)}} />
+                <div onClick={()=> {useToggle(false)}} className={`menu-close-button ${toggle ? 'menu-close-button-visible' : ''}`}>X</div>
                 <CTA title='Book a walkthrough' href='/contact'/>
                 <svg onClick={() => {useToggle(true)}} className="menu-open-button" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
             </div>

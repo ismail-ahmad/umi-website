@@ -309,6 +309,9 @@ body{
   margin-top: 40px;
   border-top: 1px solid var(--border);
 }
+.menu-close-button, .menu-open-button{
+  display: none;
+}
 
 @media screen and (min-width: 900px) {
   .menu-list{
@@ -322,14 +325,14 @@ body{
 
 @media (max-width: 768px) {
   .menu{
-    display: flex;
+    display: none;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 70%;
+    width: 100%;
     position: fixed;
-    top: calc(var(--scroll-lock-y, 0px) * -1);
+    top: 0;
     right: 0;
     background-color: var(--bg2);
     transform: translateX(100%);
@@ -347,23 +350,24 @@ body{
   }
   .menu-open{
     transform: translateX(0);
+    display: flex;
   }
   .menu-open-button{
       display: block;
     }
     .menu-close-button{
       display: none;
-      position: absolute;
-      left: 0;
-      top: 0;
     }
     .menu-close-button-visible{
+      position: absolute;
+      top: 20px;
+      right: 15px;
       display: block;
-      width: 100vw;
-      height: 100vh;
+      width: 30px;
+      height: 30px;
       background-color: transparent;
       backdrop-filter: blur(10px);
-      z-index: 989;
+      z-index: 999;
     }
     .no-scroll{
       height: 100%;
