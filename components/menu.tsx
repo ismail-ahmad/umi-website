@@ -4,14 +4,14 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 
-export default function Menu():ReactElement{
+export default function Menu({menuOpen}: {menuOpen:boolean}):ReactElement{
     const pathname = usePathname();
     const isactive = (href: string) => {
         const match = href === '/' ? pathname === '/' : pathname.startsWith(href);
         return match ? 'active-menu-link' : '';
     }
     return(
-        <div className='menu'>
+        <div className={`menu ${menuOpen ? 'menu-open' : ''}`}>
             <ul className='menu-list'>
                 <li className='menu-link'><Link href='/' className={isactive('/')}>Home</Link></li>
                 <li className='menu-link'><Link href='/services' className={isactive('/services')}>Services</Link></li>

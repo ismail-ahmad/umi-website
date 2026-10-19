@@ -20,16 +20,16 @@ export default function Footer():ReactElement{
                 </form>
               </div>
           <LinkList heading='Company'>
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
           </LinkList>
           <LinkList heading='Company'>
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
-            <FooterLinkListItem text='Option' href='/home' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
+            <FooterLinkListItem text='Option' href='/' />
           </LinkList>
             </div>
           <div className='copyright-container'>
