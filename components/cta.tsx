@@ -1,14 +1,12 @@
 'use client';
 
 import {ReactElement} from 'react';
-import { useRouter } from 'next/navigation';
 
 
-export default function CTA({type = 'cta', title, href}:{type?: string; title: string, href: string;}):ReactElement {
-    const router = useRouter();
+export default function CTA({type = 'cta', title, href, arrow}:{type?: string; title: string, href: string; arrow:boolean}):ReactElement {
     return(
         <div>
-            <a className={type} href={href}>{title}</a>
+            <a className={type} href={href}>{title}{arrow ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> : ""}</a>
         </div>
     );
 }
