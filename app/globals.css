@@ -312,8 +312,8 @@ body{
 .menu-close-button, .menu-open-button{
   display: none;
 }
-
-@media screen and (min-width: 900px) {
+/* Tab or higher menu list */
+@media screen and (min-width: 769px) {
   .menu-list{
     display: flex;
     flex-flow: row nowrap;
