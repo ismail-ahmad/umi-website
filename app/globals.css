@@ -360,11 +360,11 @@ body{
     }
     .menu-close-button-visible{
       position: absolute;
-      top: 20px;
-      right: 15px;
+      top: 10px;
+      right: 30px;
+      color: var(--ink);
       display: block;
-      width: 30px;
-      height: 30px;
+      font-size: 30px;
       background-color: transparent;
       backdrop-filter: blur(10px);
       z-index: 999;
