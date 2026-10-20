@@ -39,7 +39,7 @@ export default function Header():ReactElement{
                 <Menu menuOpen={toggle} closeMenuAction={() => {useToggle(false)}} />
                 <div onClick={()=> {useToggle(false)}} className={`menu-close-button ${toggle ? 'menu-close-button-visible' : ''}`}>X</div>
                 <div className='cta-menu-open-button-container'>
-                    <CTA title='Book a walkthrough' href='/contact'/>
+                    <CTA title='Book a walkthrough' href='/contact' arrow={false}/>
                 <svg onClick={() => {useToggle(true)}} className="menu-open-button" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
                 </div>
             </div>
