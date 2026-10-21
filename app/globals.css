@@ -270,6 +270,7 @@ body{
 /* Main styles */
 .main{
   height: 300vh;
+  overflow-x: hidden;
 }
 .home-hero-background{
   min-height: calc(100vh - 68px);
