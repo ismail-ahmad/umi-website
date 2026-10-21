@@ -612,5 +612,7 @@ body{
   }
   .home-hero-stat-container{
       flex-direction: column;
+      gap: 0;
+      margin-top: 24px;
     }
 }
