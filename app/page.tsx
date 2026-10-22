@@ -2,12 +2,14 @@ import { ReactElement } from 'react';
 import Gsection from '@/components/gsection';
 import CTA from '@/components/cta';
 import HomeHeroStat from '@/components/home-hero-stats';
+import AdvCard from '@/components/adv_card';
 
 
 export default function Home():ReactElement{
   return(
+    <>
     <div className='home-hero-background' style={{padding: '90px 0 72px'}}>
-      <Gsection nameClass={['home-hero-section', 'wrap', 'h-padding']} hero={true} EyeBrowText='Digital · Traceable · Green' headingTag='h1' headingText={<>From Plan<br />to <span className='green-heading-text'>Pack.</span></>}>
+      <Gsection nameClass={['home-hero-section', 'wrap']} hero={true} EyeBrowText='Digital · Traceable · Green' headingTag='h1' headingText={<>From Plan<br />to <span className='green-heading-text'>Pack.</span></>}>
        <p className='hero-text' style={{maxWidth: '680px', paddingTop: '16px'}}>Real-time production intelligence across the apparel value chain — capturing every roll, bundle, stitch and carton as living data. No guesswork. No hidden losses.</p>
        <div className='home-hero-button-container'>
        <CTA type='cta' title='Start a pilot' href='/contact' arrow={true} />
@@ -28,5 +30,14 @@ export default function Home():ReactElement{
       <HomeHeroStat number='141,369' numberColor='var(--amber)' text='Shortfall units made visible' />
     </div>
     </div>
+    <Gsection nameClass={['wrap', 'v-padding']} hero={false} EyeBrowText='WHAT YOU GET' headingTag='h2' headingText='Four advantages, Designed in.'>
+      <div className="adv-card-container">
+        <AdvCard cardHeading='Traceabile' cardClass='green-adv-card' cardText='Every roll, bundle and garment carries a scannable identity from intake to export carton.' cardIcon={<svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0v3a4 4 0 0 1-4 4"></path><path d="M12 18v3"></path><path d="M9 11a3 3 0 0 1 6 0"></path></svg>} />
+        <AdvCard cardHeading='Digital' cardClass='purple-adv-card' cardText='Floor data captured at source on mobile interfaces — no re-keying, no paper, no lag.' cardIcon={<svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><line x1="9" y1="2" x2="9" y2="5"></line><line x1="15" y1="2" x2="15" y2="5"></line><line x1="9" y1="19" x2="9" y2="22"></line><line x1="15" y1="19" x2="15" y2="22"></line><line x1="2" y1="9" x2="5" y2="9"></line><line x1="19" y1="9" x2="22" y2="9"></line><line x1="2" y1="15" x2="5" y2="15"></line><line x1="19" y1="15" x2="22" y2="15"></line></svg>} />
+        <AdvCard cardHeading='Green' cardClass='green-adv-card' cardText='Tighter cutting, lower rework and a paperless floor turn quality control into measurable cost savings.' cardIcon={<svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>} />
+        <AdvCard cardHeading='Realtime' cardClass='amber-adv-card' cardText='Live OEE, WIP and quality dashboards update as work happens — decisions in minutes, not days.' cardIcon={<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>} />
+      </div>
+    </Gsection>
+    </>
   );
 }
