@@ -17,7 +17,6 @@ export default function Header():ReactElement{
         const html = document.documentElement;
         const scrollY = window.scrollY;
         body.style.setProperty('--scroll-lock-y', `${scrollY}px`);
-        console.log(scrollY)
         body.classList.add('no-scroll');
         html.classList.add('no-scroll');
 

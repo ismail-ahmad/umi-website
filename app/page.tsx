@@ -38,7 +38,7 @@ export default function Home():ReactElement{
       <HomeHeroStat number='141,369' numberColor='var(--amber)' text='Shortfall units made visible' />
     </div>
     </div>
-    <Gsection nameClass={['wrap', 'v-padding']} hero={false} EyeBrowText='WHAT YOU GET' headingTag='h2' headingText='Four advantages, Designed in'>
+    <Gsection nameClass={['wrap', 'desktop-adv-cards-container']} hero={false} EyeBrowText='WHAT YOU GET' headingTag='h2' headingText='Four advantages, Designed in'>
       <div className="adv-card-container">
         <AdvCard cardHeading='Traceabile' cardClass='green-adv-card' cardText='Every roll, bundle and garment carries a scannable identity from intake to export carton.' cardIcon={<svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0v3a4 4 0 0 1-4 4"></path><path d="M12 18v3"></path><path d="M9 11a3 3 0 0 1 6 0"></path></svg>} />
         <AdvCard cardHeading='Digital' cardClass='purple-adv-card' cardText='Floor data captured at source on mobile interfaces — no re-keying, no paper, no lag.' cardIcon={<svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"></rect><line x1="9" y1="2" x2="9" y2="5"></line><line x1="15" y1="2" x2="15" y2="5"></line><line x1="9" y1="19" x2="9" y2="22"></line><line x1="15" y1="19" x2="15" y2="22"></line><line x1="2" y1="9" x2="5" y2="9"></line><line x1="19" y1="9" x2="22" y2="9"></line><line x1="2" y1="15" x2="5" y2="15"></line><line x1="19" y1="15" x2="22" y2="15"></line></svg>} />
@@ -46,7 +46,7 @@ export default function Home():ReactElement{
         <AdvCard cardHeading='Realtime' cardClass='amber-adv-card' cardText='Live OEE, WIP and quality dashboards update as work happens — decisions in minutes, not days.' cardIcon={<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>} />
       </div>
     </Gsection>
-    <Gsection nameClass={['faq-wrap', 'v-padding']} hero={false} EyeBrowText='FAQ' headingTag='h2' headingText={'Common Questions'}>
+    <Gsection nameClass={['faq-wrap']} hero={false} EyeBrowText='FAQ' headingTag='h2' headingText={'Common Questions'}>
       <div className='faq-section-container'>
         <Faq open={openFaqindex === 0} onToggle={() => {toggleFaqIndex(0)}} question='What does UMI Consultants do?' answer='UMI Consultants installs traceable, digital, real-time production workflows inside apparel factories — covering fabric inspection, cutting, stitching, finishing and packing.' />
         <Faq open={openFaqindex === 1} onToggle={() => {toggleFaqIndex(1)}} question='How long does a typical implementation take?' answer='A pilot covering one style or one production line typically goes live within two to four weeks, with a full plant rollout complete within one quarter.' />
