@@ -3,8 +3,8 @@ import { ReactElement } from 'react';
 export default function FreeResourceForm({headingTag, headingText, eyebrowText, contentText}:{headingTag:'h1'|'h2'|'h3'|'h4', headingText:string, eyebrowText:string, contentText:string}):ReactElement {
     const Heading = headingTag;
     return(
-        <div className="h-padding">
-            <div className="free-resource-form wrap">
+        <div className="h-padding wrap">
+            <div className="free-resource-form">
             <div className="form-content-part">
                 <p className="eyebrow">{eyebrowText}</p>
                 <Heading className='heading'>{headingText}</Heading>
