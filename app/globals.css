@@ -557,6 +557,15 @@ body{
   align-items: flex-start;
   flex-flow: column nowrap;
 }
+.adv-card:hover{
+  border: 1px solid var(--indigo);
+}
+.adv-card:hover:has(.green-adv-card){
+  border-color: var(--emerald);
+}
+.adv-card:has(.amber-adv-card):hover{
+  border-color: var(--amber);
+}
 .adv-card .card-heading>h3{
   font-size: clamp(18px, 2.2vw, 24px);
 }
@@ -586,6 +595,18 @@ body{
     flex-flow: row nowrap;
     gap: 28px;
   }
+}
+
+/* Tab Styles */
+@media screen and (max-width: 1125px) {
+  .adv-card-container{
+      flex-wrap: wrap;
+    }
+    .adv-card-container .adv-card{
+      flex: 40%;
+      justify-content: center;
+      aspect-ratio: initial;
+    }
 }
 
 /* MOBILE styles */
@@ -658,18 +679,8 @@ body{
       align-items: center;
       gap: 20;
     }
-    .home-hero-background{
-      /* height: auto; */
-    }
     .home-hero-stat-container{
       gap: 20px;
-    }
-    .adv-card-container{
-      flex-wrap: wrap;
-    }
-    .adv-card-container .adv-card{
-      flex: 40%;
-      justify-content: center;
     }
 }
 
