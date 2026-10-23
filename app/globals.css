@@ -602,6 +602,7 @@ body{
 .faq-wrap{
   max-width: 780px;
   margin: 0 auto;
+  padding: 80px 0;
 }
 .faq-container{
   border-bottom: 1px solid var(--border);
