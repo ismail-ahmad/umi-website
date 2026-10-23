@@ -731,6 +731,9 @@ body{
     .home-hero-stat-container{
       gap: 20px;
     }
+    .faq-question-container{
+      gap: 20px;
+    }
 }
 
 @media screen and (max-width: 550px){
