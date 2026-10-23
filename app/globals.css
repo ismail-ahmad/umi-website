@@ -588,6 +588,65 @@ body{
   gap: 20;
 }
 
+/* Free Resource Form */
+
+.free-resource-form{
+  background: radial-gradient(50% 80% at 10% 50%, rgba(79,70,229,.25), transparent 60%),radial-gradient(45% 70% at 90% 50%, rgba(16,185,129,.18), transparent 60%),#0B1120;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.free-resource-form .eyebrow{
+  color: var(--emerald);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--indigo);
+}
+.free-resource-form .heading{
+  font-size: 26px;
+  margin: 8px 0 6px;
+}
+.free-resource-form .content-text{
+  font-size: 14px;
+  color: var(--muted);
+}
+.free-resource-form button{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: var(--emerald-f);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.free-resource-form button:hover{
+  transform: translateY(-1px);
+  background: rgb(4, 120, 87);
+  cursor: pointer;
+}
+
+
+
+/* FAQs */
+
 .faq-section-container{
   width: 100%;
   text-align: left;
@@ -657,6 +716,25 @@ body{
       justify-content: center;
       aspect-ratio: initial;
     }
+    .form-content-part{
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 1;
+    }
+    .free-resource-form .form-input-part{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+  }
+  .free-resource-form .input, .free-resource-form button{
+    flex: 1;
+  }
+  .free-resource-form button{
+    width: 100%;
+  }
 }
 
 /* MOBILE styles */
@@ -735,6 +813,15 @@ body{
     .faq-question-container{
       gap: 20px;
     }
+    .free-resource-form{
+      flex-flow: column;
+    }
+    .form-input-part{
+      width: 100%;
+    }
+    .form-input-part button{
+      margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 550px){
@@ -777,7 +864,6 @@ body{
       align-items: center;
     }
     .adv-card-container .adv-card{
-      max-width: 300px;
       justify-content: flex-start;
     }
 }
@@ -801,5 +887,12 @@ body{
   }
   .faq-wrap .h-padding{
     width: 100%;
+  }
+  .free-resource-form .form-input-part{
+    display: flex;
+    gap: 10px;
+  }
+  .free-resource-form .input, .free-resource-form button{
+    flex: 1;
   }
 }

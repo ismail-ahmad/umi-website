@@ -6,6 +6,7 @@ import CTA from '@/components/cta';
 import HomeHeroStat from '@/components/home-hero-stats';
 import AdvCard from '@/components/adv_card';
 import Faq from '@/components/faq';
+import FreeResourceForm from '@/components/free_resource_form';
 
 
 export default function Home():ReactElement{
@@ -46,6 +47,7 @@ export default function Home():ReactElement{
         <AdvCard cardHeading='Realtime' cardClass='amber-adv-card' cardText='Live OEE, WIP and quality dashboards update as work happens — decisions in minutes, not days.' cardIcon={<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>} />
       </div>
     </Gsection>
+    <FreeResourceForm eyebrowText='Free Resource' headingTag='h2' headingText='Get the Factory Digitalization Checklist' contentText='30 points used in real knitwear plants. Free, instant, no spam.' />
     <Gsection nameClass={['faq-wrap']} hero={false} EyeBrowText='FAQ' headingTag='h2' headingText={'Common Questions'}>
       <div className='faq-section-container'>
         <Faq open={openFaqindex === 0} onToggle={() => {toggleFaqIndex(0)}} question='What does UMI Consultants do?' answer='UMI Consultants installs traceable, digital, real-time production workflows inside apparel factories — covering fabric inspection, cutting, stitching, finishing and packing.' />
