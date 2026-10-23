@@ -866,6 +866,9 @@ body{
     .adv-card-container .adv-card{
       justify-content: flex-start;
     }
+    .free-resource-form{
+      padding: 25px;
+    }
 }
 
 /* desktop only styles */
