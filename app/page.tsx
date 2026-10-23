@@ -1,4 +1,6 @@
-import { ReactElement } from 'react';
+'use client';
+
+import { ReactElement, useState } from 'react';
 import Gsection from '@/components/gsection';
 import CTA from '@/components/cta';
 import HomeHeroStat from '@/components/home-hero-stats';
@@ -7,6 +9,11 @@ import Faq from '@/components/faq';
 
 
 export default function Home():ReactElement{
+  const [openFaqindex, setOpenFaqIndex] = useState<number | null>(null);
+  const toggleFaqIndex = (currentIndex:number | null) => {
+    setOpenFaqIndex(currentIndex === openFaqindex ? null : currentIndex);
+  }
+
   return(
     <>
     <div className='home-hero-background' style={{padding: '90px 0 72px'}}>
@@ -41,10 +48,10 @@ export default function Home():ReactElement{
     </Gsection>
     <Gsection nameClass={['faq-wrap', 'v-padding']} hero={false} EyeBrowText='FAQ' headingTag='h2' headingText={'Common Questions'}>
       <div className='faq-section-container'>
-        <Faq question='What does UMI Consultants do?' answer='UMI Consultants installs traceable, digital, real-time production workflows inside apparel factories — covering fabric inspection, cutting, stitching, finishing and packing.' />
-        <Faq question='How long does a typical implementation take?' answer='A pilot covering one style or one production line typically goes live within two to four weeks, with a full plant rollout complete within one quarter.' />
-        <Faq question='Does UMI work with contract manufacturers?' answer='Yes. Our system holds contractors accountable to SAM-based targets using hard data, replacing opinion-based disputes with evidence.' />
-        <Faq question='What does it cost?' answer='UMI uses your existing mobile devices and Google Workspace — there is no proprietary hardware. Pricing is project-based; contact us for a quote tailored to your plant size.' />
+        <Faq open={openFaqindex === 0} onToggle={() => {toggleFaqIndex(0)}} question='What does UMI Consultants do?' answer='UMI Consultants installs traceable, digital, real-time production workflows inside apparel factories — covering fabric inspection, cutting, stitching, finishing and packing.' />
+        <Faq open={openFaqindex === 1} onToggle={() => {toggleFaqIndex(1)}} question='How long does a typical implementation take?' answer='A pilot covering one style or one production line typically goes live within two to four weeks, with a full plant rollout complete within one quarter.' />
+        <Faq open={openFaqindex === 2} onToggle={() => {toggleFaqIndex(2)}} question='Does UMI work with contract manufacturers?' answer='Yes. Our system holds contractors accountable to SAM-based targets using hard data, replacing opinion-based disputes with evidence.' />
+        <Faq open={openFaqindex === 3} onToggle={() => {toggleFaqIndex(3)}} question='What does it cost?' answer='UMI uses your existing mobile devices and Google Workspace — there is no proprietary hardware. Pricing is project-based; contact us for a quote tailored to your plant size.' />
       </div>
     </Gsection>
     </>
