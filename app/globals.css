@@ -895,7 +895,7 @@ body{
     display: flex;
     gap: 10px;
   }
-  .free-resource-form .input, .free-resource-form button{
+  .free-resource-form .input{
     flex: 1;
   }
 }
