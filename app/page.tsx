@@ -7,6 +7,7 @@ import HomeHeroStat from '@/components/home-hero-stats';
 import AdvCard from '@/components/adv_card';
 import Faq from '@/components/faq';
 import FreeResourceForm from '@/components/free_resource_form';
+import useNumberAnimator from '@/hooks/NumberAnimator';
 
 
 export default function Home():ReactElement{
@@ -14,6 +15,10 @@ export default function Home():ReactElement{
   const toggleFaqIndex = (currentIndex:number | null) => {
     setOpenFaqIndex(currentIndex === openFaqindex ? null : currentIndex);
   }
+
+  const value = useNumberAnimator({target: 80.82, duration: 5000});
+  const value2 = useNumberAnimator({target: 64.58, duration: 4000});
+  const value3 = useNumberAnimator({target: 141369, duration: 6000});
 
   return(
     <>
@@ -34,9 +39,9 @@ export default function Home():ReactElement{
       </div>
     </Gsection>
     <div className='home-hero-stat-container'>
-      <HomeHeroStat number='80.82%' numberColor='var(--teal)' text='Average OEE achieved' />
-      <HomeHeroStat number='64.58%' numberColor='var(--ink)' text='Overall production achievement' />
-      <HomeHeroStat number='141,369' numberColor='var(--amber)' text='Shortfall units made visible' />
+      <HomeHeroStat number={value.toFixed(2) + '%'} numberColor='var(--teal)' text='Average OEE achieved' />
+      <HomeHeroStat number={value2.toFixed(2) + '%'} numberColor='var(--ink)' text='Overall production achievement' />
+      <HomeHeroStat number={value3.toFixed(0)} numberColor='var(--amber)' text='Shortfall units made visible' />
     </div>
     </div>
     <Gsection nameClass={['wrap', 'desktop-adv-cards-container']} hero={false} EyeBrowText='WHAT YOU GET' headingTag='h2' headingText='Four advantages, Designed in'>
