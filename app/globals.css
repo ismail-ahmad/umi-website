@@ -544,6 +544,10 @@ body{
 
 
 .adv-card{
+  backface-visibility: hidden;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: opacity 1s linear, visibility 1s linear;
   background: var(--panel);
   padding: 26px;
   flex: 1;
@@ -586,6 +590,13 @@ body{
   justify-content: flex-start;
   align-items: center;
   gap: 20;
+}
+
+.adv-cards-visible{
+  visibility: visible;
+  opacity: 1;
+  transform: initial;
+  transition: all 500ms ease-in-out;
 }
 
 /* Free Resource Form */

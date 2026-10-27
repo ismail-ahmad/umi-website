@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 
-export default function AdvCard({cardIcon, cardClass, cardHeading, cardText}: {cardIcon:React.ReactNode, cardClass?: string, cardHeading: string, cardText: string}): ReactElement {
+export default function AdvCard({cardIcon, cardClass, cardHeading, cardText, visible}: {cardIcon:React.ReactNode, cardClass?: string, cardHeading: string, cardText: string, visible: string}): ReactElement {
     return(
-        <div className='adv-card'>
+        <div className={`adv-card ${visible}`}>
             <div className={`card-icon ${cardClass}`}>{cardIcon}</div>
             <div className='card-heading'><h3>{cardHeading}</h3></div>
             <div className='card-text'>{cardText}</div>

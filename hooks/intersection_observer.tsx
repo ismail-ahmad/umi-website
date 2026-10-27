@@ -1,5 +1,45 @@
 'use client';
 
+import { useState, useEffect, useCallback, useRef } from 'react';
+
+export default function useIntersectionObserver(): {observer: (id: string) => (el: HTMLElement | null) => void, visible: Set<string>} {
+    const Items = useRef<Map<string, HTMLElement>>(new Map());
+    const [visible, setVisible] = useState<Set<string>>(new Set());
+    const observerRef = useRef<IntersectionObserver | null>(null);
+
+    useEffect(() => {
+        observerRef.current = new IntersectionObserver((entries) => {
+            setVisible((prev) => {
+                const next = new Set(prev);
+                entries.forEach((entry) => {
+                    const key = [...Items.current].find(([_, el]) => el === entry.target)?.[0];
+
+                    if(!key) return;
+                    if(entry.isIntersecting){
+                        next.add(key);
+                    } else{
+                        next.delete(key);
+                    }
+                });
+                return next;
+            });
+        });
+
+        Items.current.forEach((el) => {
+            observerRef.current?.observe(el);
+        });
+
+        return () => {observerRef.current?.disconnect();}
+    },[]);
+
+    const observer = useCallback((id: string) => ((element:HTMLElement | null) => {
+            if(id) {
+                if(element !== null){Items.current.set(id, element);}
+            }
+    }), [])
+    return {observer, visible}
+}
+
 // import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 // export interface UseIntersectionObserverOptions {
