@@ -23,7 +23,7 @@ export default function useIntersectionObserver(): {observer: (id: string) => (e
                 });
                 return next;
             });
-        }, {threshold: 0.25});
+        },);
 
         Items.current.forEach((el) => {
             observerRef.current?.observe(el);

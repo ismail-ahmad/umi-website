@@ -2,12 +2,13 @@
 
 import {useState, useEffect, useRef} from 'react';
 
-export default function useNumberAnimator({target, duration}:{target:number, duration:number}): number{
+export default function useNumberAnimator({target, duration, start}:{target:number, duration:number, start: boolean}): number{
     const [value, setValue] = useState<number>(0);
     const currentTime = useRef<number|null>(null);
     const frameId = useRef<number|null>(null);
 
     useEffect(() => {
+        if(!start) return;
         currentTime.current = null;
         function animator(now: number) {
             
@@ -28,6 +29,6 @@ export default function useNumberAnimator({target, duration}:{target:number, dur
                     cancelAnimationFrame(frameId.current)
                 }
             }
-    }, [duration, target]);
+    }, [duration, target, start]);
     return value
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import Gsection from '@/components/gsection';
 import CTA from '@/components/cta';
 import HomeHeroStat from '@/components/home-hero-stats';
@@ -13,17 +13,24 @@ import useIntersectionObserver from '@/hooks/intersection_observer';
 
 export default function Home():ReactElement{
   const [openFaqindex, setOpenFaqIndex] = useState<number | null>(null);
+  const [start, setStart] = useState<boolean>(false);
   const toggleFaqIndex = (currentIndex:number | null) => {
     setOpenFaqIndex(currentIndex === openFaqindex ? null : currentIndex);
   }
 
-  const value = useNumberAnimator({target: 80.82, duration: 5000});
-  const value2 = useNumberAnimator({target: 64.58, duration: 4000});
-  const value3 = useNumberAnimator({target: 141369, duration: 6000});
+    // intersectionObserver below
 
-  // intersectionObserver below
+    const {observer, visible} = useIntersectionObserver();
 
-  const {observer, visible} = useIntersectionObserver();
+  useEffect(() => {
+    if(visible.has('numbers-container')){
+      setStart(true);
+    }
+  }, [visible]);
+
+  const value = useNumberAnimator({target: 80.82, duration: 5000, start: start});
+  const value2 = useNumberAnimator({target: 64.58, duration: 4000, start: start});
+  const value3 = useNumberAnimator({target: 141369, duration: 6000, start: start});
 
   return(
     <>
@@ -43,7 +50,7 @@ export default function Home():ReactElement{
         <div className="tnode"><span className="dot"><svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"></path><polyline points="3 8 12 13 21 8"></polyline><line x1="12" y1="13" x2="12" y2="21"></line></svg></span><span className="lb">PACK</span></div>
       </div>
     </Gsection>
-    <div className='home-hero-stat-container'>
+    <div ref={observer('numbers-container')} className='home-hero-stat-container'>
       <HomeHeroStat number={value.toFixed(2) + '%'} numberColor='var(--teal)' text='Average OEE achieved' />
       <HomeHeroStat number={value2.toFixed(2) + '%'} numberColor='var(--ink)' text='Overall production achievement' />
       <HomeHeroStat number={value3.toFixed(0)} numberColor='var(--amber)' text='Shortfall units made visible' />
