@@ -547,14 +547,13 @@ body{
   backface-visibility: hidden;
   opacity: 0;
   transform: rotateY(180deg);
-  transition: opacity 1s linear, visibility 1s linear;
   background: var(--panel);
   padding: 26px;
   flex: 1;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 26px;
-  transition: transform .2s, border-color .2s;
+  transition: transform .2s, border-color .2s, opacity 1000ms linear, visibility 1000ms linear, rotateY 1000ms ease-in-out;
   aspect-ratio: 1;
   display: flex;
   justify-content: flex-start;
@@ -596,7 +595,18 @@ body{
   visibility: visible;
   opacity: 1;
   transform: initial;
-  transition: all 500ms ease-in-out;
+}
+.adv-cards-visible1{
+  transition: all 500ms 300ms ease-in-out;
+}
+.adv-cards-visible2{
+  transition: all 750ms  300ms ease-in-out;
+}
+.adv-cards-visible3{
+  transition: all 1000ms 300ms ease-in-out;
+}
+.adv-cards-visible4{
+  transition: all 1250ms 300ms ease-in-out;
 }
 
 /* Free Resource Form */
