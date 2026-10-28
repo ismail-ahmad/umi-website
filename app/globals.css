@@ -553,7 +553,7 @@ body{
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 26px;
-  transition: transform .2s, border-color .2s, opacity 1000ms linear, visibility 1000ms linear, rotateY 1000ms ease-in-out;
+  transition: transform .5s ease-in-out, border-color .2s ease, opacity 1000ms linear, visibility 1000ms linear;
   aspect-ratio: 1;
   display: flex;
   justify-content: flex-start;
@@ -561,7 +561,7 @@ body{
   flex-flow: column nowrap;
 }
 .adv-card:hover{
-  border: 1px solid var(--indigo);
+  border-color:var(--indigo);
 }
 .adv-card:hover:has(.green-adv-card){
   border-color: var(--emerald);
@@ -597,16 +597,32 @@ body{
   transform: initial;
 }
 .adv-cards-visible1{
-  transition: all 500ms 300ms ease-in-out;
+  transition:
+    transform   500ms  300ms ease-in-out,
+    opacity     500ms  300ms linear,
+    visibility  500ms  300ms linear,
+    border-color .2s    ease;
 }
 .adv-cards-visible2{
-  transition: all 750ms  300ms ease-in-out;
+  transition:
+    transform   750ms  300ms ease-in-out,
+    opacity     750ms  300ms linear,
+    visibility  750ms  300ms linear,
+    border-color .2s    ease;
 }
 .adv-cards-visible3{
-  transition: all 1000ms 300ms ease-in-out;
+  transition:
+    transform   1000ms 300ms ease-in-out,
+    opacity     1000ms 300ms linear,
+    visibility  1000ms 300ms linear,
+    border-color .2s    ease;
 }
 .adv-cards-visible4{
-  transition: all 1250ms 300ms ease-in-out;
+  transition:
+    transform   1250ms 300ms ease-in-out,
+    opacity     1250ms 300ms linear,
+    visibility  1250ms 300ms linear,
+    border-color .2s    ease;
 }
 
 /* Free Resource Form */
