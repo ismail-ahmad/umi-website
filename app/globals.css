@@ -495,6 +495,67 @@ body{
   line-height: 1.1;
   letter-spacing: -.4px;
 }
+.non-home-non-hero-gsection .about-card-part{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 48px;
+}
+.about-card-part .card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background:radial-gradient(80% 80% at 50% 0%,rgba(79,70,229,.18),transparent 70%),var(--panel);
+  text-align: center;
+  padding: 36px;
+  transition: all 0.2s;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.about-card .about-card-number{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--emerald);
+}
+.about-card .about-card-content{
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.about-card-part .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(129, 140, 248, .45);
+}
+.about-card-part .card a{
+  text-decoration: none;
+}
+.about-card-part .about-card-content-part{
+  flex: 50%;
+}
+.about-card-part .about-cards-part{
+  flex: 50%;
+  padding: 0 32px;
+}
+.about-cards-part .smaller-cards{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+.about-cards-part .smaller-cards .card{
+  padding: 20;
+  flex: 1;
+}
+.non-home-hero-gsection h1{
+  max-width: 680px;
+  margin: 12px 0 18px;
+}
+
+.non-home-non-hero-gsection h2{
+  margin-bottom: 50px;
+}
+.non-home-non-hero-gsection .about-card-content-part p{
+  margin-bottom: 18px;
+}
 
 /* Advantage Card Styles */
 
@@ -734,6 +795,15 @@ body{
   transform: rotate(45deg);
 }
 
+
+/* About page styles */
+
+.about-content-section{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+
 /* Tab or higher menu list */
 @media screen and (min-width: 769px) {
   .menu-list{
@@ -859,6 +929,9 @@ body{
     .form-input-part button{
       margin-top: 20px;
     }
+    .about-card-part .about-cards-part{
+      padding: 0;
+    }
 }
 
 @media screen and (max-width: 550px){
@@ -906,6 +979,10 @@ body{
     .free-resource-form{
       padding: 25px;
     }
+    .non-home-non-hero-gsection .about-card-part{
+    flex-direction: column;
+    gap: 150px;
+  }
 }
 
 /* desktop only styles */
