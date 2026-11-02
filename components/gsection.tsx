@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export default function Gsection({children, nameClass, hero, EyeBrowText, headingTag, headingText, headingClass}: {children?: React.ReactNode, headingText:React.ReactNode | string, EyeBrowText: string, nameClass?: string[], hero:boolean, headingTag: 'h1' | 'h2' | 'h3' | 'h4', headingClass?:string}):ReactElement{
+export default function Gsection({children, nameClass, hero, EyeBrowText, headingTag, headingText, headingClass}: {children?: React.ReactNode, headingText?:React.ReactNode | string, EyeBrowText: string, nameClass?: string[], hero:boolean, headingTag: 'h1' | 'h2' | 'h3' | 'h4' | 'div', headingClass?:string}):ReactElement{
     const Heading = headingTag;
     return(
         <section className={`g-section ${hero ? '': 'v-padding'} ${(nameClass ? nameClass.join(" ") : '')} ${headingClass}`}>
