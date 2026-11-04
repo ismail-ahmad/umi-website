@@ -913,6 +913,8 @@ body{
 .contact-form{
   transition: transform .2s, border-color .2s;
   border: 1px solid var(--border);
+  margin: 56px 24px 28px 0;
+  padding: 32px;
 }
 .contact-form:hover, .contact-card:hover{
   transform: translateY(-4px);
@@ -1051,6 +1053,13 @@ body{
       padding: 0;
     }
     .contact-page{
+      flex-direction: column;
+    }
+    .contact-form{
+      margin: 56px 24px 28px 24px;
+      padding: 24px;
+    }
+    .form-inputs-styles{
       flex-direction: column;
     }
 }

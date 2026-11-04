@@ -5,12 +5,12 @@ export default function Contact() {
         <div className='wrap contact-page'>
           <Gsection hero={false} headingTag='h1' headingText="Let's see what your floor is hiding." EyeBrowText='GET IN TOUCH'>
             <p style={{marginTop: '18px'}}>Book a free 30-minute walkthrough of UMI's production intelligence system. We'll show you real data from a live plant — then discuss what it would look like in yours.</p>
-            <a className='contact-card' href="mailto:ibrahim.ahmad@umiconsultants.com" style={{display:'flex',alignItems:'center',gap:'16px',textDecoration:'none',padding:'18px 20px'}}>
+            <a className='contact-card' href="mailto:ibrahim@umiconsultants.com" style={{display:'flex',alignItems:'center',gap:'16px',textDecoration:'none',padding:'18px 20px', overflowWrap: 'break-word', wordBreak: 'break-all', hyphens: 'auto'}}>
               <div className={'svg-div'} style={{margin:0,flex:'none'}}><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg></div>
-              <div><div style={{fontFamily:'var(--mono)', fontSize:'10px', letterSpacing:'1.5px',color:'var(--muted)', textTransform:'uppercase'}}>Email</div><div style={{fontWeight:600,color:'var(--ink)',marginTop:'2px',fontSize:'14.5px'}}>ibrahim.ahmad@umiconsultants.com</div></div>
+              <div><div style={{fontFamily:'var(--mono)', fontSize:'10px', letterSpacing:'1.5px',color:'var(--muted)', textTransform:'uppercase'}}>Email</div><div style={{fontWeight:600,color:'var(--ink)',marginTop:'2px',fontSize:'14.5px'}}>ibrahim@umiconsultants.com</div></div>
             </a>
           </Gsection>
-          <div className="contact-form" style={{background:'var(--panel2)', padding:'32px', margin: '56px 24px 28px 0', borderRadius: 'var(--radius)'}}>
+          <div className="contact-form" style={{background:'var(--panel2)', borderRadius: 'var(--radius)'}}>
             <form action="">
               <div className="form-heading-content">
                 <h2 style={{fontSize:'22px',marginBottom:'4px'}}>Tell us about your factory</h2>
