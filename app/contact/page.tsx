@@ -13,7 +13,7 @@ export default function Contact() {
           <div className="contact-form" style={{background:'var(--panel2)', borderRadius: 'var(--radius)'}}>
             <form action="">
               <div className="form-heading-content">
-                <h2 style={{fontSize:'22px',marginBottom:'4px'}}>Tell us about your factory</h2>
+                <h2 style={{fontSize:'22px', marginBottom:'4px'}}>Tell us about your factory</h2>
                 <p style={{fontSize:'13.5px', color:'var(--muted)', marginBottom:'24px'}}>Fill in the form and we'll set up a walkthrough.</p>
               </div>
               <div className="form-input-fields">
