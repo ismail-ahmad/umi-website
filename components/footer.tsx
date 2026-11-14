@@ -43,7 +43,7 @@ export default function Footer():ReactElement{
                 </form>
               </div>
           <LinkList heading='Company'>
-            <FooterLinkListItem text='UMI' href='/' />
+            <FooterLinkListItem text='UMI Consultants' href='/' />
             <FooterLinkListItem text='Contact' href='/contact' />
             <FooterLinkListItem text='About' href='/about' />
             {/* <FooterLinkListItem text='Option' href='/' /> */}
