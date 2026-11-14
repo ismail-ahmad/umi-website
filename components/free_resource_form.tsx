@@ -30,7 +30,7 @@ export default function FreeResourceForm({headingTag, headingText, eyebrowText, 
                 <Heading className='heading'>{headingText}</Heading>
                 <p className='content-text'>{contentText}</p>
             </div>
-            <form onSubmit={handleSubmit} className="form-input-part">
+            <form method='post' onSubmit={handleSubmit} className="form-input-part">
                 <input value={namedNewsletterName} onChange={(e) => setNamedNewsletterName(e.target.value)} className='input' type="text" name="Name" placeholder='Name' />
                 <input value={namedNewsletterEmail} onChange={ (e) => setNamedNewsletterEmail(e.target.value) } className='input' type="email" name="Email" placeholder='Email' />
                 <button className='subscribe-button'>Subscribe</button>
