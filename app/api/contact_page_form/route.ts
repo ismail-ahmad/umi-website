@@ -1,8 +1,8 @@
 import {NextResponse} from 'next/server';
 import {transport} from '@/lib/nodemailer';
 
-export async function POST(response: Response) {
-    const body = await response.json();
+export async function POST(request: Request) {
+    const body = await request.json();
     const {name, company, email, phone, problem, message} = body;
     if(
             !name || !company || !email || !phone || !problem || !message ||
