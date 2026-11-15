@@ -39,7 +39,7 @@ export default function Home():ReactElement{
        <p className='hero-text' style={{maxWidth: '680px', paddingTop: '16px'}}>Real-time production intelligence across the apparel value chain — capturing every roll, bundle, stitch and carton as living data. No guesswork. No hidden losses.</p>
        <div className='home-hero-button-container'>
        <CTA type='cta' title='Start a pilot' href='/contact' arrow={true} />
-       <CTA type='hero-button2' title='Read our insights' href='/services' arrow={false} />
+       <CTA type='hero-button2' title='Free Checklist' href='#checklist-form' arrow={false} />
        </div>
        <div className="thread">
         <div className="tnode"><span className="dot"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="13" y2="13"></line></svg></span><span className="lb">PLAN</span></div>
