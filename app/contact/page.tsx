@@ -28,6 +28,11 @@ export default function Contact() {
       alert('Submission Failed, Please try again!');
       return;
     }
+    setCompany('');
+    setEmail('');
+    setMessage('');
+    setName('');
+    setPhone('');
     alert("Form Submitted Successfully!");
   }
     return(

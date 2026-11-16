@@ -4,7 +4,6 @@ import {transport} from '@/lib/nodemailer';
 export async function POST(request: Request){
     const body = await request.json();
     const {email} = body;
-    console.log(email);
     if(!email || typeof email !== 'string'){
         return NextResponse.json({
             message: 'input error',
